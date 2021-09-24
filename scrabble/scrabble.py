@@ -3,9 +3,9 @@ from typing import *
 
 class Letter:
     def __init__(self, char: str, score: int, amount: int):
-        self.__dict__['char']: str = char
-        self.__dict__['score']: int = score
-        self.__dict__['amount']: int = amount
+        self.__dict__["char"]: str = char
+        self.__dict__["score"]: int = score
+        self.__dict__["amount"]: int = amount
 
     def __setattr__(self, key, value):
         raise AttributeError("can't set attribute")
@@ -28,10 +28,10 @@ class Letter:
     def __sub__(self, other):
         if isinstance(other, int):
             if other <= self.amount:
-                self.__dict__['amount'] -= other
+                self.__dict__["amount"] -= other
                 return
 
         raise ValueError
 
     def _is_blank(self):
-        return self.char == ''
+        return self.char == ""
