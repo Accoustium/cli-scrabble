@@ -6,6 +6,13 @@ sys.path.append('..')
 from scrabble.scrabble import Letter
 
 
+@pytest.mark.xfail(raises=AttributeError)
+def test_is_frozen():
+    lt = Letter('A', 1, 9)
+    lt.amount = 0
+    print(lt.amount)
+
+
 @pytest.mark.parametrize(
     "test_input, letter",
     [
@@ -66,3 +73,32 @@ def test_letter_vs_letter_fail(test_input: tuple, test_letter: tuple):
 )
 def test_letter_vs_other(test_input: tuple, other: Any):
     assert Letter(*test_input) != other
+
+
+@pytest.mark.parametrize(
+    "letter, sub, expected",
+    [
+        (('', 0, 2), 1, 1),
+        (('A', 1, 9), 4, 5),
+        (('H', 4, 1), 1, 0),
+    ]
+)
+def test_letter_subtract(letter: tuple, sub: int, expected: int):
+    lt = Letter(*letter)
+    _ = lt - sub
+    assert lt.amount == expected
+
+
+@pytest.mark.parametrize(
+    "letter, sub, expected",
+    [
+        (('', 0, 2), 1.0, 1),
+        (('A', 1, 9), 'H', 5),
+        (('H', 4, 1), 15, 0),
+    ]
+)
+@pytest.mark.xfail(raises=ValueError)
+def test_letter_subtract(letter: tuple, sub: int, expected: int):
+    lt = Letter(*letter)
+    _ = lt - sub
+    assert lt.amount == expected

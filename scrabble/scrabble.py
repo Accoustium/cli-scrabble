@@ -1,14 +1,14 @@
 from typing import *
-import collections
 
 
-LETTER = collections.namedtuple('LETTER', ['char', 'score', 'amount'])
+class Letter:
+    def __init__(self, char: str, score: int, amount: int):
+        self.__dict__['char']: str = char
+        self.__dict__['score']: int = score
+        self.__dict__['amount']: int = amount
 
-
-class Letter(LETTER):
-    char: str
-    score: int
-    amount: int
+    def __setattr__(self, key, value):
+        raise AttributeError("can't set attribute")
 
     def __eq__(self, other: Union[object, str]):
         if not isinstance(other, Letter):
@@ -24,6 +24,14 @@ class Letter(LETTER):
                 return True
 
             return self.char == other.char
+
+    def __sub__(self, other):
+        if isinstance(other, int):
+            if other <= self.amount:
+                self.__dict__['amount'] -= other
+                return
+
+        raise ValueError
 
     def _is_blank(self):
         return self.char == ''

@@ -5,7 +5,7 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-[pytest.tool.ini_options]
+[tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "--cov-report term-missing --cov=scrabble"
 required_plugins = ['pytest-cov>=2.12.1']
