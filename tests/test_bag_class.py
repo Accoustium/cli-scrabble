@@ -1,8 +1,5 @@
 from typing import *
 import pytest
-import sys
-
-sys.path.append("..")
 from scrabble.bag import *
 
 
@@ -11,7 +8,7 @@ def bag():
     return LetterBag()
 
 
-def test_bag_startup(bag):
+def test_bag_startup(bag: LetterBag):
     assert bag == {
                 LetterTile('', 0): 2,
                 LetterTile('A', 1): 9,
@@ -43,14 +40,14 @@ def test_bag_startup(bag):
             }
 
 
-def test_find_amount_in_bag_by_letter(bag):
+def test_find_amount_in_bag_by_letter(bag: LetterBag):
     assert bag['A'] == 9
 
 
-def test_find_amount_in_bag_by_LetterTile(bag):
+def test_find_amount_in_bag_by_letter_class(bag: LetterBag):
     assert bag[LetterTile('A', 1)] == 9
 
 
 @pytest.mark.xfail(raises=KeyError)
-def test_KeyError(bag):
+def test_key_error(bag: LetterBag):
     amount = bag['Zebra']

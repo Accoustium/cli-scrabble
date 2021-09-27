@@ -1,8 +1,5 @@
 from typing import *
 import pytest
-import sys
-
-sys.path.append("..")
 from scrabble.bag import LetterTile
 
 
