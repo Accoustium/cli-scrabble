@@ -3,7 +3,7 @@ import pytest
 import sys
 
 sys.path.append("..")
-from scrabble.scrabble import LetterTile
+from scrabble.bag import LetterTile
 
 
 @pytest.mark.parametrize(
@@ -66,3 +66,8 @@ def test_letter_vs_letter_fail(test_input: tuple, test_letter: tuple):
 )
 def test_letter_vs_other(test_input: tuple, other: Any):
     assert LetterTile(*test_input) != other
+
+
+def test_letter_is_hashable():
+    lt = hash(LetterTile('A', 1))
+    return True
