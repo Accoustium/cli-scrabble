@@ -66,5 +66,5 @@ def test_letter_vs_other(test_input: tuple, other: Any):
 
 
 def test_letter_is_hashable():
-    lt = hash(LetterTile('A', 1))
+    lt = hash(LetterTile("A", 1))
     return True
