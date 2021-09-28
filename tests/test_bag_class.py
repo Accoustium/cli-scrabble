@@ -1,10 +1,9 @@
-from typing import *
 import pytest
-from scrabble.bag import *
+from scrabble.bag import LetterBag, LetterTile
 
 
 @pytest.fixture(scope="module")
-def bag():
+def bag() -> LetterBag:
     return LetterBag()
 
 
