@@ -1,4 +1,5 @@
 import copy
+import random
 from typing import *
 from .letter import LetterTile
 
@@ -61,3 +62,16 @@ class LetterBag(dict):
                     return key
 
         raise KeyError(other)
+
+    def pull_tile(self):
+        if self == {}:
+            return None
+        keys = self.keys()
+        random_int = int(random.random() * len(keys))
+        tile = self._find_key(keys[random_int])
+        if self[tile] > 1:
+            self[tile] -= 1
+            return tile
+        else:
+            self.pop(tile)
+            return tile

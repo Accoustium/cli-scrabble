@@ -48,6 +48,19 @@ def test_find_amount_in_bag_by_letter_class(bag: LetterBag):
     assert bag[LetterTile("A", 1)] == 9
 
 
+def test_tile_pull(bag: LetterBag):
+    tile = bag.pull_tile()
+    assert isinstance(tile, LetterTile)
+
+
+def test_tile_pull_stops_after_last_tile(bag: LetterBag):
+    tile = bag.pull_tile()
+    while tile is not None:
+        tile = bag.pull_tile()
+
+    assert bag == {}
+
+
 @pytest.mark.xfail(raises=KeyError)
 def test_key_error(bag: LetterBag):
     amount = bag["Zebra"]
