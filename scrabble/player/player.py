@@ -15,7 +15,7 @@ class Player:
         return f"Player(user={self.username})"
 
     def pull_tiles(self, bag: LetterBag):
-        while len(self.tray) >= 7:
+        while len(self.tray) < 7:
             tile = bag.pull_tile()
             if tile is None:
                 break
@@ -23,7 +23,7 @@ class Player:
             self.tray.append(tile)
 
     def show_tray(self):
-        return ["  ".join(map(str, self.tray))]
+        return "  ".join(map(str, self.tray))
 
     def sort_tray(self, reverse=False):
         self.tray.sort(key=lambda x: x.char, reverse=reverse)
