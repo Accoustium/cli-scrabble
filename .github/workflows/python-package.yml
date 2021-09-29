@@ -29,8 +29,8 @@ jobs:
           timestamp=$(date -u)
           git commit -m "Template cleanup: ${timestamp}" || exit 0
           git push
-  build:
 
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
