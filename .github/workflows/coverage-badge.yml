@@ -26,7 +26,8 @@ jobs:
         python -m pip install coverage-badge
     - name: Create Badge
       run: |
-        python -m coverage-badge -o coverage.svg
+        which coverage-badge
+
 
     - name: Commit files if changed
       run: |
