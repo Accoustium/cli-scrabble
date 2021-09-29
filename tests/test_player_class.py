@@ -84,7 +84,12 @@ def test_player_1_sort_tray(player_1):
 
 
 def test_player_1_sort_tray_multiple_letter(player_1):
-    player_1.tray = [LetterTile("A", 1), LetterTile("B", 3), LetterTile("A", 1), LetterTile("A", 1)]
+    player_1.tray = [
+        LetterTile("A", 1),
+        LetterTile("B", 3),
+        LetterTile("A", 1),
+        LetterTile("A", 1),
+    ]
     player_1.sort_tray()
     assert player_1.show_tray() == "A  A  A  B"
 
