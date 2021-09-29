@@ -54,20 +54,20 @@ def test_player_1_sort_keys_reverse(player_1):
 
 
 def test_player_playing_tile_with_letter_tile_passing(player_2):
-    player_2.tray = [LetterTile('A', 1), LetterTile('Z', 10)]
-    assert player_2.play_tile(LetterTile('Z', 10))
+    player_2.tray = [LetterTile("A", 1), LetterTile("Z", 10)]
+    assert player_2.play_tile(LetterTile("Z", 10))
 
 
 def test_player_playing_tile_with_letter_tile_failing(player_2):
-    player_2.tray = [LetterTile('A', 1), LetterTile('Z', 10)]
-    assert not player_2.play_tile(LetterTile('B', 3))
+    player_2.tray = [LetterTile("A", 1), LetterTile("Z", 10)]
+    assert not player_2.play_tile(LetterTile("B", 3))
 
 
 def test_player_playing_tile_with_str_passing(player_2):
-    player_2.tray = [LetterTile('A', 1), LetterTile('Z', 10)]
-    assert player_2.play_tile('Z')
+    player_2.tray = [LetterTile("A", 1), LetterTile("Z", 10)]
+    assert player_2.play_tile("Z")
 
 
 def test_player_playing_tile_with_letter_tile_failing(player_2):
-    player_2.tray = [LetterTile('A', 1), LetterTile('Z', 10)]
-    assert not player_2.play_tile('B')
+    player_2.tray = [LetterTile("A", 1), LetterTile("Z", 10)]
+    assert not player_2.play_tile("B")
