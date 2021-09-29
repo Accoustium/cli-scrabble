@@ -77,13 +77,19 @@ def test_player_2_stops_pulling_when_bag_is_empty(player_2, bag):
     assert len(player_2.tray) != 7
 
 
-def test_player_1_sort_keys(player_1):
+def test_player_1_sort_tray(player_1):
     player_1.tray = [LetterTile("A", 1), LetterTile("B", 3)]
     player_1.sort_tray()
     assert player_1.show_tray() == "A  B"
 
 
-def test_player_1_sort_keys_reverse(player_1):
+def test_player_1_sort_tray_multiple_letter(player_1):
+    player_1.tray = [LetterTile("A", 1), LetterTile("B", 3), LetterTile("A", 1), LetterTile("A", 1)]
+    player_1.sort_tray()
+    assert player_1.show_tray() == "A  A  A  B"
+
+
+def test_player_1_sort_tray_reverse(player_1):
     player_1.tray = [LetterTile("A", 1), LetterTile("B", 3)]
     player_1.sort_tray(reverse=True)
     assert player_1.show_tray() == "B  A"
