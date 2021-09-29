@@ -1,7 +1,8 @@
+from typing import *
 import sys
 
 sys.path.append("../..")
-from scrabble.bag import LetterBag
+from scrabble.bag import LetterBag, LetterTile
 
 
 class Player:
@@ -27,3 +28,11 @@ class Player:
 
     def sort_tray(self, reverse=False):
         self.tray.sort(key=lambda x: x.char, reverse=reverse)
+
+    def play_tile(self, letter: Union[LetterTile, str]):
+        for idx, _letter in enumerate(self.tray):
+            if _letter == letter:
+                tile = self.tray.pop(idx)
+                return True
+
+        return False
