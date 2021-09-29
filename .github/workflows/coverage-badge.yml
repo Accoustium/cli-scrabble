@@ -12,7 +12,7 @@ jobs:
     name: Coverage Badge Creation
     runs-on: ubuntu-latest
     strategy:
-      python-version: [3.9]
+      python-version: '3.9'
 
     steps:
       - uses: actions/checkout@v2
