@@ -26,6 +26,7 @@ jobs:
         python -m pip install coverage-badge coverage
     - name: Create Badge
       run: |
+        locate .coverage
         /opt/hostedtoolcache/Python/3.9.7/x64/bin/coverage-badge -o coverage.svg
 
     - name: Commit files if changed
