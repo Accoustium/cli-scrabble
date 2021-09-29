@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--cov-report=xml --cov=scrabble --cov-report=term-missing"
+addopts = "--cov=scrabble --cov-report=term-missing"
 required_plugins = ['pytest-cov>=2.12.1']
 log_file = 'logs/pytest-logs.txt'
 log_file_date_format = '%Y-%m-%d %H:%M:%S'
