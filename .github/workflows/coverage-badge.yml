@@ -27,7 +27,7 @@ jobs:
     - name: Create Badge
       run: |
         pytest
-        /opt/hostedtoolcache/Python/3.9.7/x64/bin/coverage-badge -o coverage.svg
+        /opt/hostedtoolcache/Python/3.9.7/x64/bin/coverage-badge -o coverage.svg -f
 
     - name: Commit files if changed
       run: |
