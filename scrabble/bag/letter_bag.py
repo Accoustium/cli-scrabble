@@ -13,7 +13,7 @@ class LetterBag(dict):
                 LetterTile("A", 1): 9,
                 LetterTile("B", 3): 2,
                 LetterTile("C", 3): 2,
-                LetterTile("D", 2): 3,
+                LetterTile("D", 2): 4,
                 LetterTile("E", 1): 12,
                 LetterTile("F", 4): 2,
                 LetterTile("G", 2): 3,
