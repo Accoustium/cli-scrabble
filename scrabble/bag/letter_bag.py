@@ -1,7 +1,10 @@
 import copy
 import random
 from typing import *
-from .letter import LetterTile
+from .letter import LetterTile, Alphabet
+
+
+ALPHABET = Alphabet()
 
 
 class LetterBag(dict):
@@ -10,33 +13,33 @@ class LetterBag(dict):
 
         self.update(
             {
-                LetterTile("A", 1): 9,
-                LetterTile("B", 3): 2,
-                LetterTile("C", 3): 2,
-                LetterTile("D", 2): 4,
-                LetterTile("E", 1): 12,
-                LetterTile("F", 4): 2,
-                LetterTile("G", 2): 3,
-                LetterTile("H", 4): 2,
-                LetterTile("I", 1): 9,
-                LetterTile("J", 8): 1,
-                LetterTile("K", 5): 1,
-                LetterTile("L", 1): 4,
-                LetterTile("M", 3): 2,
-                LetterTile("N", 1): 6,
-                LetterTile("O", 1): 8,
-                LetterTile("P", 3): 2,
-                LetterTile("Q", 10): 1,
-                LetterTile("R", 1): 6,
-                LetterTile("S", 1): 4,
-                LetterTile("T", 1): 6,
-                LetterTile("U", 1): 4,
-                LetterTile("V", 4): 2,
-                LetterTile("W", 4): 2,
-                LetterTile("X", 8): 1,
-                LetterTile("Y", 1): 2,
-                LetterTile("Z", 10): 1,
-                LetterTile("", 0): 2,
+                ALPHABET.A: 9,
+                ALPHABET.B: 2,
+                ALPHABET.C: 2,
+                ALPHABET.D: 4,
+                ALPHABET.E: 12,
+                ALPHABET.F: 2,
+                ALPHABET.G: 3,
+                ALPHABET.H: 2,
+                ALPHABET.I: 9,
+                ALPHABET.J: 1,
+                ALPHABET.K: 1,
+                ALPHABET.L: 4,
+                ALPHABET.M: 2,
+                ALPHABET.N: 6,
+                ALPHABET.O: 8,
+                ALPHABET.P: 2,
+                ALPHABET.Q: 1,
+                ALPHABET.R: 6,
+                ALPHABET.S: 4,
+                ALPHABET.T: 6,
+                ALPHABET.U: 4,
+                ALPHABET.V: 2,
+                ALPHABET.W: 2,
+                ALPHABET.X: 1,
+                ALPHABET.Y: 2,
+                ALPHABET.Z: 1,
+                ALPHABET.BLANK: 2,
             }
         )
 
